@@ -14,3 +14,17 @@ end
 def no_valid_url?(urls)
   urls.none? { |url| valid_url?(url) }
 end
+
+# helper method for any_passing_students?
+# returns average of numbers in an array
+
+def find_average(arr)
+  arr.sum / arr.length
+end
+
+def any_passing_students?(students)
+  students.any? do |student|
+    average = find_average(student[:grades])
+    average > 75
+  end
+end
