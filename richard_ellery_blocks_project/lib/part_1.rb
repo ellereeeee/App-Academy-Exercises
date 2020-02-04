@@ -5,21 +5,18 @@ def select_even_nums(arr)
 end
 
 def reject_puppies(arr)
-  arr.reject do |hash|
-    hash["age"] < 3
-  end
+  arr.reject { |hash| hash["age"] < 3 }
 end
 
 def count_positive_subarrays(arr)
   arr.count { |sub_arr| sub_arr.sum > 0 }
 end
 
-def aba_translate(str)
+def aba_translate(word)
   aba_output = ""
   vowels = "aeiou"
-  letters = str.split("")
-
-  letters.each do |char|
+  
+  word.each_char do |char|
     vowels.include?(char) ? aba_output += char + "b" + char : aba_output += char
   end
 
