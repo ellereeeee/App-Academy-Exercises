@@ -13,12 +13,12 @@ end
 # returns average of numbers in an array
 
 def find_average(arr)
-  arr.sum / arr.length
+  arr.sum / arr.length * 1.0
 end
 
 def any_passing_students?(students)
   students.any? do |student|
     average = find_average(student[:grades])
-    average > 75
+    average >= 75
   end
 end
