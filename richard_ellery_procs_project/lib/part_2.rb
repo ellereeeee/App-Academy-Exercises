@@ -29,9 +29,9 @@ end
 def alternating_mapper(arr, prc_1, prc_2)
   results = []
 
-  arr.each do |ele|
-    results << prc_1.call(ele) if arr.index(ele).even?
-    results << prc_2.call(ele) if arr.index(ele).odd?
+  arr.each_with_index do |ele, idx|
+    results << prc_1.call(ele) if idx.even?
+    results << prc_2.call(ele) if idx.odd?
   end
 
   results
