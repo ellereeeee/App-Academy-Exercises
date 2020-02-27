@@ -34,7 +34,6 @@ class Dog
   end
   
   def bark
-    # @age > 3 ? bark.upcase + "!" : bark.downcase + "!" 
     if @age > 3
       return @bark.upcase
     else
