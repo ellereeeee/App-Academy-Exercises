@@ -43,8 +43,6 @@ class Dog
   end
 
   def favorite_food?(food)
-    downcased_foods = []
-    @favorite_foods.each { |food| downcased_foods << food.downcase }
-    downcased_foods.include?(food.downcase)
+    @favorite_foods.map{&:downcase}.include?(food.downcase)
   end
 end
