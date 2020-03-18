@@ -59,7 +59,7 @@ class Bootcamp
   end
   
   def average_grade(student)
-    if @grades[student].length == 0 || !enrolled?(student)
+    if self.num_grades(student) == 0 || !self.enrolled?(student)
       return nil
     else
       @grades[student].sum / @grades[student].length
