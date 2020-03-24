@@ -6,7 +6,7 @@ class Array
   end
 
   def average
-    return nil if self.length == 0
+    return nil if self.empty?
     self.sum / (self.length * 1.0)
   end
 
