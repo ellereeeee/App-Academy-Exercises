@@ -7,9 +7,7 @@ class Array
 
   def average
     return nil if self.length == 0
-    if self.all? { |ele| ele.class == Integer }
-      return self.sum * 1.0 / self.length * 1.0
-    end
+    self.sum / (self.length * 1.0)
   end
 
   def median
