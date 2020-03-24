@@ -14,9 +14,9 @@ class Array
     sorted = self.sort
     if self.length == 0
       return nil
-    elsif self.length % 2 != 0
-      median_index = self.length / 2
-      return sorted[median_index]
+    elsif self.length.odd?
+      mid_idx = self.length / 2
+      return sorted[mid_idx]
     else
       mid_idx2 = self.length / 2
       mid_idx1 = mid_idx2 - 1
