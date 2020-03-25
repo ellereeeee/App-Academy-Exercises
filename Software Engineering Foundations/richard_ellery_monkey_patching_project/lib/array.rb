@@ -14,7 +14,7 @@ class Array
     return nil if self.empty?
 
     sorted = self.sort
-    
+
     if self.length.odd?
       mid_idx = self.length / 2
       return sorted[mid_idx]
@@ -29,5 +29,40 @@ class Array
     counts_hash = Hash.new(0)
     self.each { |ele| counts_hash[ele] += 1 }
     counts_hash
+  end
+
+  def my_count(val)
+    count = 0
+    self.each { |ele| count += 1 if ele == val }
+    count
+  end
+
+  def my_index(val)
+    return nil if !self.include?(val)
+    self.each_with_index { |ele, idx| return idx if ele == val }
+  end
+
+  def my_uniq
+    dupe = []
+    self.each { |ele| dupe << ele if !dupe.include?(ele) }
+    dupe
+  end
+
+  def my_transpose
+    output = Array.new(self.length) {Array.new}
+    
+    array_idx = 0
+    ele_idx = 0
+
+    while ele_idx < self.length
+      output[ele_idx] << self[array_idx][ele_idx]
+      array_idx += 1
+      if array_idx == self.length
+        array_idx = 0
+        ele_idx += 1
+      end
+    end
+
+    output
   end
 end
