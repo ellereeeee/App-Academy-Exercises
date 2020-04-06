@@ -24,7 +24,7 @@ class Hangman
   end
 
   def already_attempted?(char)
-    @attempted_chars.include?(char) ? true : false
+    @attempted_chars.include?(char)
   end
 
   def get_matching_indices(char)
