@@ -41,12 +41,12 @@ class Hangman
     if already_attempted?(char)
       p "that has already been attempted"
       return false
-    else
-      @attempted_chars << char
-      indices = get_matching_indices(char)
-      indices.length == 0 ? @remaining_incorrect_guesses -= 1 : fill_indices(char, indices)
-      true
     end
+
+    @attempted_chars << char
+    indices = get_matching_indices(char)
+    indices.empty? ? @remaining_incorrect_guesses -= 1 : fill_indices(char, indices)
+    true
   end
 
   def ask_user_for_guess
