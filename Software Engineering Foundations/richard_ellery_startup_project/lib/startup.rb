@@ -19,7 +19,7 @@ class Startup
   end
 
   def hire(employee_name, title)
-    !self.valid_title?(title) ? raise "title is invalid!" : @employees << Employee.new(employee_name, title)
+    !self.valid_title?(title) ? raise("title is invalid!") : @employees << Employee.new(employee_name, title)
   end
   
   def size
