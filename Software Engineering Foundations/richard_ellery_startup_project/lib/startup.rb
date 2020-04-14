@@ -22,8 +22,7 @@ class Startup
     if !self.valid_title?(title)
       raise_error
     else
-      employee = Employee.new(employee_name, title)
-      @employees << employee
+      @employees << Employee.new(employee_name, title)
     end
   end
   
