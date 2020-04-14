@@ -27,12 +27,12 @@ class Startup
   end
 
   def pay_employee(employee)
-    salary = salaries[employee.title]
+    salary = @salaries[employee.title]
     if @funding >= salary
       employee.pay(salary)
       @funding -= salary
     else
-      raise_error
+      raise "not enough funding!"
     end
   end
 
