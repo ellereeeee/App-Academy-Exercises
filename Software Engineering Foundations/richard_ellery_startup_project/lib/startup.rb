@@ -33,7 +33,6 @@ class Startup
 
   def pay_employee(employee)
     salary = salaries[employee.title]
-    # @funding >= salary ? employee.pay(salary) : raise_error
     if @funding >= salary
       employee.pay(salary)
       @funding -= salary
