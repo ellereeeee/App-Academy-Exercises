@@ -11,11 +11,11 @@ class Startup
   end
 
   def valid_title?(title)
-    salaries.keys.include?(title)
+    @salaries.keys.include?(title)
   end
 
   def >(startup)
-    self.funding > startup.funding
+    @funding > startup.funding
   end
 
   def hire(employee_name, title)
