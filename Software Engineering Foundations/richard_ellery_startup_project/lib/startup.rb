@@ -23,7 +23,7 @@ class Startup
   end
   
   def size
-    self.employees.length
+    @employees.length
   end
 
   def pay_employee(employee)
