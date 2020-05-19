@@ -7,7 +7,7 @@ class Code
   }
   
   def self.valid_pegs?(chars)
-    chars.map(&:upcase).all? { |color| POSSIBLE_PEGS.keys.include?(color) }
+    chars.all? { |color| POSSIBLE_PEGS.has_key?(color.upcase) }
   end
 
   def initialize(chars)
