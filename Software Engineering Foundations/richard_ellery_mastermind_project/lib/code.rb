@@ -10,6 +10,16 @@ class Code
     chars.all? { |color| POSSIBLE_PEGS.has_key?(color.upcase) }
   end
 
+  def self.random(length)
+    random_pegs = []
+    length.times { random_pegs << POSSIBLE_PEGS.keys.sample }
+    Code.new(random_pegs)
+  end
+
+  def self.from_string(string)
+    Code.new(string.split(""))
+  end
+
   def initialize(chars)
     if !Code.valid_pegs?(chars)
       raise "contains invalid peg(s)"
@@ -20,16 +30,6 @@ class Code
 
   def pegs
     @pegs
-  end
-
-  def self.random(length)
-    random_pegs = []
-    length.times { random_pegs << POSSIBLE_PEGS.keys.sample }
-    Code.new(random_pegs)
-  end
-
-  def self.from_string(string)
-    Code.new(string.split(""))
   end
 
   def [](index)
