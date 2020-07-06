@@ -37,4 +37,16 @@ class Code
   def length
     @pegs.length
   end
+
+  def num_exact_matches(guess_inst)
+    exact_matches = 0
+    i = 0
+    while i < guess_inst.length
+      if guess_inst[i] == self[i]
+        exact_matches += 1
+      end
+      i += 1
+    end
+    exact_matches
+  end
 end
