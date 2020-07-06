@@ -5,6 +5,8 @@ class Code
     "B" => :blue,
     "Y" => :yellow
   }
+
+  attr_reader :pegs
   
   def self.valid_pegs?(chars)
     chars.all? { |color| POSSIBLE_PEGS.has_key?(color.upcase) }
@@ -26,10 +28,6 @@ class Code
     else
       @pegs = chars.map(&:upcase)
     end
-  end
-
-  def pegs
-    @pegs
   end
 
   def [](index)
