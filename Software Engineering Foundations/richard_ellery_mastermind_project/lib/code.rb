@@ -48,13 +48,8 @@ class Code
 
   def num_near_matches(guess_inst)
     near_matches = 0
-    i = 0
-    while i < guess_inst.length
-      peg = guess_inst[i]
-      if self.pegs.include?(peg) && self[i] != guess_inst[i]
-        near_matches += 1
-      end
-      i += 1
+    (0...guess_inst.length).each do |i|
+      near_matches += 1 if self.pegs.include?(guess_inst[i]) && self[i] != guess_inst[i]
     end
     near_matches
   end
