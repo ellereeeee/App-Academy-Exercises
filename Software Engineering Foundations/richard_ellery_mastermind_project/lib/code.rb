@@ -49,4 +49,17 @@ class Code
     end
     exact_matches
   end
+
+  def num_near_matches(guess_inst)
+    near_matches = 0
+    i = 0
+    while i < guess_inst.length
+      peg = guess_inst[i]
+      if self.pegs.include?(peg) && self[i] != guess_inst[i]
+        near_matches += 1
+      end
+      i += 1
+    end
+    near_matches
+  end
 end
