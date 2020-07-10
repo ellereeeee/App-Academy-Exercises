@@ -40,12 +40,8 @@ class Code
 
   def num_exact_matches(guess_inst)
     exact_matches = 0
-    i = 0
-    while i < guess_inst.length
-      if guess_inst[i] == self[i]
-        exact_matches += 1
-      end
-      i += 1
+    (0...guess_inst.length).each do |i|
+      exact_matches += 1 if guess_inst[i] == self[i]
     end
     exact_matches
   end
