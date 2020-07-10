@@ -62,4 +62,8 @@ class Code
     end
     near_matches
   end
+
+  def ==(guess_inst)
+    guess_inst == self.pegs
+  end
 end
