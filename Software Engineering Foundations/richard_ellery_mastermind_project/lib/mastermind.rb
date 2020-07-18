@@ -12,9 +12,8 @@ class Mastermind
 
   def ask_user_for_guess
     p "Enter a code"
-    guess = gets.chomp
-    guess_inst = Code.from_string(guess)
-    print_matches(guess_inst)
+    guess_inst = Code.from_string(gets.chomp)
+    self.print_matches(guess_inst)
     guess_inst == @secret_code
   end
 end
