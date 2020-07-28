@@ -6,12 +6,14 @@ class Board
     @size = n * n
   end
 
-  def [](arr)
-    @grid[arr[0]][arr[1]] 
+  def [](position)
+    row, col = position
+    @grid[row][col] 
   end
 
-  def []=(pos, val)
-    @grid[pos[0]][pos[1]] = val
+  def []=(position, val)
+    row, col = position
+    @grid[row][col] = val
   end
 
   def num_ships
