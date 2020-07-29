@@ -50,4 +50,14 @@ class Board
       self.[]=(position, :S)
     end
   end
+
+  def hidden_ships_grid
+    hidden_grid = []
+    @grid.each do |row|
+      hidden_row = []
+      row.each { |val| val == :S ? hidden_row << :N : hidden_row << val}
+      hidden_grid << hidden_row
+    end
+    hidden_grid
+  end
 end
