@@ -30,4 +30,24 @@ class Board
       false
     end
   end
+  
+  def random_position
+    max_length = @grid[0].length
+    random_row = rand(1...max_length)
+    random_col = rand(1...max_length)
+    position = [random_row, random_col]
+  end
+
+  def place_random_ships
+    amount_to_place = (@grid.flatten.length * 0.25).round
+    amount_to_place.times do
+      position = self.random_position
+      if self.[](position) == :S
+        until self.[](position) != :S
+          position = self.random_position
+        end
+      end
+      self.[]=(position, :S)
+    end
+  end
 end
