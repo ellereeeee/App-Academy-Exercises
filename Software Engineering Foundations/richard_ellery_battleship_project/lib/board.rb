@@ -67,4 +67,8 @@ class Board
       print "\n"
     end
   end
+
+  def cheat
+    Board.print_grid(@grid)
+  end
 end
