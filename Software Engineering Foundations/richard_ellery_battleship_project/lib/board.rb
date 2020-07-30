@@ -60,4 +60,11 @@ class Board
     end
     hidden_grid
   end
+
+  def self.print_grid(grid)
+    grid.each do |row| 
+      print row.join(" ")
+      print "\n"
+    end
+  end
 end
