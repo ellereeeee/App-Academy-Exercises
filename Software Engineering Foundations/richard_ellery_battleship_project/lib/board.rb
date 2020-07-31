@@ -52,13 +52,9 @@ class Board
   end
 
   def hidden_ships_grid
-    hidden_grid = []
-    @grid.each do |row|
-      hidden_row = []
-      row.each { |val| val == :S ? hidden_row << :N : hidden_row << val}
-      hidden_grid << hidden_row
+    @grid.map do |row|
+      row.map { |val| val == :S ? :N : val}
     end
-    hidden_grid
   end
 
   def self.print_grid(grid)
