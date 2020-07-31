@@ -21,12 +21,12 @@ class Board
   end
 
   def attack(position)
-    if self.[](position) == :S
-      self.[]=(position, :H)
+    if self[position] == :S
+      self[position] = :H
       p 'you sunk my battleship!'
       true
     else
-      self.[]=(position, :X)
+      self[position] = :X
       false
     end
   end
