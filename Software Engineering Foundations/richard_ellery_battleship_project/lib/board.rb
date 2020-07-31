@@ -1,5 +1,11 @@
 class Board
   attr_reader :size
+  
+  def self.print_grid(grid)
+    grid.each do |row| 
+      puts row.join(" ")
+    end
+  end
 
   def initialize(n)
     @grid = Array.new(n) {Array.new(n, :N)}
@@ -54,13 +60,6 @@ class Board
   def hidden_ships_grid
     @grid.map do |row|
       row.map { |val| val == :S ? :N : val}
-    end
-  end
-
-  def self.print_grid(grid)
-    grid.each do |row| 
-      print row.join(" ")
-      print "\n"
     end
   end
 
