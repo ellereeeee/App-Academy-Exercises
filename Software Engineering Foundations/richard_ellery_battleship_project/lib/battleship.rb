@@ -12,7 +12,7 @@ class Battleship
 
   def start_game
     @board.place_random_ships
-    puts @board.num_ships
+    puts "Number of ships: #{@board.num_ships}"
     @board.print
   end
 
