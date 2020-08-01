@@ -42,6 +42,6 @@ class Battleship
     position = @player.get_move
     @remaining_misses -= 1 if @board.attack(position) == false
     @board.print
-    print "Remaining misses: #{@remaining_misses}"
+    puts "Remaining misses: #{@remaining_misses}"
   end
 end
