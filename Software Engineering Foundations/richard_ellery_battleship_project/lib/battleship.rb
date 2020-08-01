@@ -37,4 +37,12 @@ class Battleship
   def game_over?
     self.win? || self.lose? ? true : false
   end
+
+  def turn
+    position = @player.get_move
+    move = @board.attack(position)
+    @board.print
+    @remaining_misses -=1 if move == false
+    print @remaining_misses
+  end
 end
