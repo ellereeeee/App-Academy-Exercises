@@ -73,7 +73,8 @@ end
 # reverse_string("internet")    # => "tenretni"
 # reverse_string("friends")     # => "sdneirf"
 def reverse_string(str)
-
+  return "" if str.length == 0
+  str.slice(-1) + reverse_string(str.chop)
 end
 
 
