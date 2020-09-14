@@ -55,7 +55,9 @@ end
 # sum_array([5, 2])         # => 7
 # sum_array([4, 10, -1, 2]) # => 15
 def sum_array(array)
-
+  return 0 if array.length == 0
+  return array[0] if array.length == 1
+  array.pop + sum_array(array)
 end
 
 
