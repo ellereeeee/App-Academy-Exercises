@@ -13,7 +13,6 @@
 # pow(4, 3) # => 64
 def pow(base, exponent)
   return 1 if exponent == 0
-  return base if exponent == 1
   base * pow(base, exponent - 1)
 end
 
@@ -107,5 +106,4 @@ end
 #     2-dimensional array: [['some data']]
 #     3-dimensional array: [[['some data']]]
 def flatten(data)
-
 end
